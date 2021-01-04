@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>notebooks on Radiophonic Oddity</title>
+    <link>https://dilzeem.github.io/tags/notebooks/</link>
+    <description>Recent content in notebooks on Radiophonic Oddity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 30 Dec 2020 23:59:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/tags/notebooks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spacemacs and Vim</title>
+      <link>https://dilzeem.github.io/posts/code-1/</link>
+      <pubDate>Wed, 30 Dec 2020 23:59:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/code-1/</guid>
+      <description>I first came across Vim while I while I was in my bachelor studying Electrical Engineering. We had to do a few Computer Science classes where we learned how to program. In addition we were all forced to use UNIX, the vi editor, along with subversion. All this stuff was completely new to me. I was meant to be studying electrical engineering, why am I using a terminal, how am I supposed to type my C code and finish the homework assignments, how do I even exit this.</description>
+    </item>
+    
+    <item>
+      <title>I don&#39;t like notebooks</title>
+      <link>https://dilzeem.github.io/posts/i-dont-like-notebooks/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/i-dont-like-notebooks/</guid>
+      <description>I don&amp;rsquo;t like notebooks. That was the title of the youtube video the algorithims had suggest me to watch. How could one not like using Jupyter Notebooks? This was how I learnt to program in python and how I worked through an online deep learning course (fast.ai). What was even more interesting, was that what sparked the speakers to present the talk was from a twitter fued with the primary teacher of fast.</description>
+    </item>
+    
+  </channel>
+</rss>
