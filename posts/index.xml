@@ -6,14 +6,16 @@
     <description>Recent content in Posts on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Something about me</title>
-      <link>https://dilzeem.github.io/posts/about/</link>
-      <pubDate>Fri, 01 Jan 2021 00:00:00 +0100</pubDate>
+      <title>Home Assistant</title>
+      <link>https://dilzeem.github.io/posts/home-assitant/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0100</pubDate>
       
-      <guid>https://dilzeem.github.io/posts/about/</guid>
-      <description>This is something to talk about</description>
+      <guid>https://dilzeem.github.io/posts/home-assitant/</guid>
+      <description>Home Assistant is a solution/software that allows you to automate and coordinate your devices at home. It offers a variety of integrations that one to link different product/services together.
+The main aim of this document is to provide a quick and easy setup on how to get up and running, and a reminder to myself to understand the reasoning about some of the setup choices I made.
+There are 4 main ways to setup home assistant each with their own pros and cons.</description>
     </item>
     
     <item>
