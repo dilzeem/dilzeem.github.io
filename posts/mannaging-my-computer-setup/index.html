@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Managing my computer setup | Radiophonic Oddity</title>
+  <meta name="description" content="Musings">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Managing my computer setup" />
+<meta property="og:description" content="This file outlines how my computer is set up. With all the tools that I usually use. By documenting this using literate programming am to be explain the use of tools and maintain a consistent development environment across different machines. This only provides a snapshot of my current setup, however the latest version can be found in my github repo.
+Emacs &amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dilzeem.github.io/posts/mannaging-my-computer-setup/" />
+<meta property="article:published_time" content="2021-01-06T00:00:00+01:00" />
+<meta property="article:modified_time" content="2021-01-06T00:00:00+01:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Managing my computer setup"/>
+<meta name="twitter:description" content="This file outlines how my computer is set up. With all the tools that I usually use. By documenting this using literate programming am to be explain the use of tools and maintain a consistent development environment across different machines. This only provides a snapshot of my current setup, however the latest version can be found in my github repo.
+Emacs &amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://dilzeem.github.io/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://dilzeem.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://dilzeem.github.io/posts/home-assitant/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&text=Managing%20my%20computer%20setup">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&is_video=false&description=Managing%20my%20computer%20setup">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Managing%20my%20computer%20setup&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&name=Managing%20my%20computer%20setup&description=This%20file%20outlines%20how%20my%20computer%20is%20set%20up.%20With%20all%20the%20tools%20that%20I%20usually%20use.%20By%20documenting%20this%20using%20literate%20programming%20am%20to%20be%20explain%20the%20use%20of%20tools%20and%20maintain%20a%20consistent%20development%20environment%20across%20different%20machines.%20This%20only%20provides%20a%20snapshot%20of%20my%20current%20setup%2c%20however%20the%20latest%20version%20can%20be%20found%20in%20my%20github%20repo.%0aEmacs%20%26amp%3b%20Org-mode%20Org%20mode%20is%20a%20tool%20that%20enables%20me%20to%20document%20my%20configuration%20files%20and%20practice%20literate%20programming.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&t=Managing%20my%20computer%20setup">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#emacs-and-org-mode">Emacs &amp; Org-mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#active">Active</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#clojure">Clojure</a></li>
+        <li><a href="#font">Font</a></li>
+        <li><a href="#windows-terminal">Windows Terminal</a></li>
+        <li><a href="#video-editing">Video Editing</a></li>
+        <li><a href="#dot-bashrc">.bashrc</a></li>
+        <li><a href="#config-dot-fish">config.fish</a></li>
+        <li><a href="#dot-profile">.profile</a></li>
+        <li><a href="#dot-xmodmap">.Xmodmap</a></li>
+        <li><a href="#spacemacs">Spacemacs</a></li>
+        <li><a href="#work-computer-stuff">work computer stuff</a></li>
+        <li><a href="#home-assistant">Home Assistant</a></li>
+        <li><a href="#mu4e"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> mu4e</a></li>
+        <li><a href="#vscode"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> VSCode</a></li>
+      </ul>
+    </li>
+    <li><a href="#no-longer-used">No longer Used</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Managing my computer setup
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-01-06 00:00:00 &#43;0100 CET" itemprop="datePublished">2021-01-06</time>
+          
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>This file outlines how my computer is set up. With all the tools that I usually use.
+By documenting this using <a href="https://en.wikipedia.org/wiki/Literate%5Fprogramming">literate programming</a> am to be explain the use of tools and maintain a consistent development environment across different machines.
+This only provides a snapshot of my current setup, however the latest version can be found in my <a href="https://github.com/dilzeem/dotfiles">github repo</a>.</p>
+<h3 id="emacs-and-org-mode">Emacs &amp; Org-mode</h3>
+<p><a href="https://orgmode.org/">Org mode</a> is a tool that enables me to document my configuration files and practice literate programming.
+The tool is one of the awesome many features that you can utilize when you are using Emacs.</p>
+<p>Below I outline a few features that I am using to help to keep the documentation concise and reproducible.</p>
+<h4 id="source-blocks-language">source blocks language</h4>
+<p>In org mode you are able your something called <a href="https://orgmode.org/manual/Working-with-Source-Code.html">source blocks</a> that can define code snippets. We are able to use different languages by placing it in the header below.</p>
+<p>Python:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;hello world&#34;</span>)
+</code></pre></div><p>Shell:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">echo <span style="color:#e6db74">&#34;Hello World&#34;</span>
+</code></pre></div><h4 id="tangle">tangle</h4>
+<p>Tangle is the process of exporting these source blocks. There are a few features we can use to customize how we tangle these source books.</p>
+<p>One of the first things one can do is of the export source blocks to a particular file which is done with a header argument.</p>
+<pre><code class="language-:tangle" data-lang=":tangle">sudo apt-get install firefox
+</code></pre><p>This will export the file to <code>clean-install.sh</code> in the current directory.</p>
+<p>Also sometimes you wish to tangle onlyh a subtree. This can be done easily by narrowing the buffer to the subtree using the commands <code>, s n</code> and tangle the buffer with <code>, b t</code>.
+Once that is done then you can widen back to see the entire file <code>, s w</code>.</p>
+<h4 id="run-sudo-commands-in-a-specific-directory">run sudo commands in a specific directory</h4>
+<p>In the previous example, if you would like to execute the following command we would need to have elevated privileges. To overcome this we can add another header that will allow us to run <code>sudo</code> commands in the directory as seen below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install firefox
+</code></pre></div><p>This will execute the commands in <code>somedirectory</code>. It should be noted that the directory path needs to be absolute and not relative. The sudo part can also be a remote machine as the underlying mechanisim used here is <a href="https://www.emacswiki.org/emacs/TrampMode">TRAMP</a>.</p>
+<h4 id="further-resources">further resources</h4>
+<p>There is a lot that can you leverage when using org mode and source blocks. ou can</p>
+<ul>
+<li>:cache - allows you to avoid reevaluating the unchanged code blocks</li>
+<li>:results - allows you to specify how the code will be displayed</li>
+<li>:async - allows the code to be run asynchronously</li>
+<li>:session - defines a session for the code to run in so that you can maintain state of evaluated code</li>
+</ul>
+<p>This is an <a href="http://howardism.org/Technical/Emacs/literate-devops.html">excellent blog post</a> outlining the power of literate programming and what can be achieved. The same author also created a <a href="https://www.youtube.com/watch?v=0g9BcZvQbXU">great video on writing technical documentation</a>.</p>
+<p>Also here is another <a href="https://www.youtube.com/watch?v=qz9tSMsMDII">video</a> showcasing the use of <a href="https://github.com/pashky/restclient.el">REST client</a>.</p>
+<h2 id="active">Active</h2>
+<p>These are list of all the things and their configurations that I am using for my current computer setup.</p>
+<h3 id="linux">Linux</h3>
+<p>This section can apply to both a linux installation as well as Windows Subsystem for Linux.
+A lot of the tools are really not required if emacs, as there are similar tools/packages/functions that can achieve much of the same.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>firefox</p>
+<p>This is mainly useful for running notebooks/web development from within WSL. There is no browser installed by WSL by default.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install firefox
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>pandoc</p>
+<p>While org mode has inbuilt functions that export org files to formats that I require, pandoc takes it further an allows the possibility to convert org files to a greater amount of document types.
+To use this within spacemacs this needs to be added to the <code>.spacemacs</code> file as a layer <code>pandoc</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install pandoc
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>fish shell</p>
+<p><a href="https://fishshell.com/">Fish shell</a> and  <a href="https://github.com/oh-my-fish/oh-my-fish">Oh my fish</a>  are my preferred ways of using/configuring my shell. This is my preferred setup, as it looks nice and I like a lot of the auto complete features and nice history it provides. It also doesn&rsquo;t require to much configuration.
+The only annoying this is that sometimes things just don&rsquo;t work (especially scripts), but it easy to drop back to bash for those moments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-add-repository ppa:fish-shell/release-3
+sudo apt-get update
+sudo apt-get install fish
+
+curl -L https://get.oh-my.fish | fish
+omf theme agnoster
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>ripgrep</p>
+<p><a href="https://github.com/BurntSushi/ripgrep">Ripgrep</a> is a faster version of grep. This also can be utilized by spacemancs when searching for text/files and is done by setting the default tool in the <code>.spacemacs</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install ripgrep
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>fd</p>
+<p><a href="https://github.com/sharkdp/fd">Fd</a> is a faster version of find. Can be useful when wishing to search system wide for files.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install fd-find
+</code></pre></div></li>
+</ul>
+<h3 id="python">Python</h3>
+<p>Setting up python environment, which is my main programming language that I use.</p>
+<h4 id="install-miniconda">install miniconda</h4>
+<p>I prefer to use <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> just so it keeps the minimal as possible, and set up the python path nicely.
+I don&rsquo;t use use <code>conda</code> command at prefer to use <code>poetry</code> (see below) for managing virtualenvs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+</code></pre></div><h4 id="install-poetry">install poetry</h4>
+<p><a href="https://python-poetry.org/">Poetry</a> is my preferred way of managing virtualenvs as it allows for ease of packing up the code as well.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+</code></pre></div><h4 id="pyenv">pyenv</h4>
+<p>Sometimes it might be required that I need to use a specific version of Python.
+This hasn&rsquo;t come around too often, but <a href="https://github.com/pyenv/pyenv">Pyenv</a> helps me manage python versions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y make build-essential libssl-dev zlib1g-dev <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl
+
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+echo <span style="color:#e6db74">&#39;export PYENV_ROOT=&#34;$HOME/.pyenv&#34;&#39;</span> &gt;&gt; ~/.bashrc
+echo <span style="color:#e6db74">&#39;export PATH=&#34;$PYENV_ROOT/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+echo -e <span style="color:#e6db74">&#39;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n eval &#34;$(pyenv init -)&#34;\nfi&#39;</span> &gt;&gt; ~/.bashrc
+</code></pre></div><h3 id="clojure">Clojure</h3>
+<p><a href="https://purelyfunctional.tv/guide/how-to-install-clojure/">https://purelyfunctional.tv/guide/how-to-install-clojure/</a></p>
+<h4 id="java">Java</h4>
+<p>Clojure runs on the JVM, hence why we need to install java first before we can get install clojure</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y software-properties-common
+wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+sudo apt-get update
+sudo apt-get install -y adoptopenjdk-11-hotspot
+java -version
+</code></pre></div><h4 id="clojure">Clojure</h4>
+<p>Now we can install clojure, once the JVM has been installed.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y bash curl rlwrap
+curl -O https://download.clojure.org/install/linux-install-1.10.1.763.sh
+chmod +x linux-install-1.10.1.763.sh
+sudo ./linux-install-1.10.1.763.sh
+clj --version
+</code></pre></div><h4 id="npm-and-clojurescript"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> npm &amp; Clojurescript</h4>
+<p>To use clojurescript we need to install a few tools.</p>
+<p>The first being NPM</p>
+<p>Next we can install shadow-cljs so that we can us the NPM ecosystem for our clojurescript projects.</p>
+<pre><code class="language-nil" data-lang="nil">sudo apt install npm
+</code></pre><h3 id="font">Font</h3>
+<p>Download the fonts from <a href="https://github.com/ryanoasis/nerd-fonts/">nerd fonts</a>. However there a lot of fonts here, so to make it easier we only need to download the fonts that are relevant and place them in the appropriate folder location.
+The fonts can be downloaded from <a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a> and can be viewed there as well.</p>
+<p>An important note for `spacemacs` when you define the font it can be tricky to find out what the name of the of the font is called. The best way to determine what the name of the font is actually called is by opening up the tff file in Windows, and seeing in the dialog box what it is called.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd /usr/local/share/fonts/
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/IBMPlexMono.zip
+unzip IBMPlexMono.zip
+rm IBMPlexMono.zip
+</code></pre></div><h3 id="windows-terminal">Windows Terminal</h3>
+<p>The settings.json file contains all the configuration for the windows terminal.
+This is the basic one that I have used that has some nice shortcuts for tab management.</p>
+<p>Also note that the font needs to be installed on windows first before it can be used.
+See the <a href="#font">Font</a> section of this config file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;$schema&#34;</span>: <span style="color:#e6db74">&#34;https://aka.ms/terminal-profiles-schema&#34;</span>,
+    <span style="color:#f92672">&#34;defaultProfile&#34;</span>: <span style="color:#e6db74">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span>,
+    <span style="color:#f92672">&#34;copyOnSelect&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;copyFormatting&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;profiles&#34;</span>:
+    {
+        <span style="color:#f92672">&#34;defaults&#34;</span>:
+        {
+        },
+        <span style="color:#f92672">&#34;list&#34;</span>:
+        [
+            {
+                <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Make</span> <span style="color:#960050;background-color:#1e0010">changes</span> <span style="color:#960050;background-color:#1e0010">here</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">powershell.exe</span> <span style="color:#960050;background-color:#1e0010">profile.</span>
+                <span style="color:#f92672">&#34;guid&#34;</span>: <span style="color:#e6db74">&#34;{61c54bbd-c2c6-5271-96e7-009a87ff44bf}&#34;</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Windows PowerShell&#34;</span>,
+                <span style="color:#f92672">&#34;commandline&#34;</span>: <span style="color:#e6db74">&#34;powershell.exe&#34;</span>,
+                <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>
+            },
+            {
+                <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Make</span> <span style="color:#960050;background-color:#1e0010">changes</span> <span style="color:#960050;background-color:#1e0010">here</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">cmd.exe</span> <span style="color:#960050;background-color:#1e0010">profile.</span>
+                <span style="color:#f92672">&#34;guid&#34;</span>: <span style="color:#e6db74">&#34;{0caa0dad-35be-5f56-a8ff-afceeeaa6101}&#34;</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Command Prompt&#34;</span>,
+                <span style="color:#f92672">&#34;commandline&#34;</span>: <span style="color:#e6db74">&#34;cmd.exe&#34;</span>,
+                <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>
+            },
+            {
+                <span style="color:#f92672">&#34;guid&#34;</span>: <span style="color:#e6db74">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span>,
+                <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Ubuntu&#34;</span>,
+                <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;Windows.Terminal.Wsl&#34;</span>,
+                <span style="color:#f92672">&#34;colorScheme&#34;</span>: <span style="color:#e6db74">&#34;Monokai Cmder&#34;</span>,
+                <span style="color:#f92672">&#34;fontFace&#34;</span>: <span style="color:#e6db74">&#34;Hack Nerd Font Mono&#34;</span>,
+                <span style="color:#f92672">&#34;fontSize&#34;</span>: <span style="color:#ae81ff">11</span>
+            },
+            {
+                <span style="color:#f92672">&#34;guid&#34;</span>: <span style="color:#e6db74">&#34;{b453ae62-4e3d-5e58-b989-0a998ec441b8}&#34;</span>,
+                <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>,
+                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Azure Cloud Shell&#34;</span>,
+                <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;Windows.Terminal.Azure&#34;</span>
+            }
+        ]
+    },
+
+    <span style="color:#f92672">&#34;schemes&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Monokai Cmder&#34;</span>,
+            <span style="color:#f92672">&#34;black&#34;</span>: <span style="color:#e6db74">&#34;#272822&#34;</span>,
+            <span style="color:#f92672">&#34;red&#34;</span>: <span style="color:#e6db74">&#34;#a70334&#34;</span>,
+            <span style="color:#f92672">&#34;green&#34;</span>: <span style="color:#e6db74">&#34;#74aa04&#34;</span>,
+            <span style="color:#f92672">&#34;yellow&#34;</span>: <span style="color:#e6db74">&#34;#b6b649&#34;</span>,
+            <span style="color:#f92672">&#34;blue&#34;</span>: <span style="color:#e6db74">&#34;#01549e&#34;</span>,
+            <span style="color:#f92672">&#34;purple&#34;</span>: <span style="color:#e6db74">&#34;#89569c&#34;</span>,
+            <span style="color:#f92672">&#34;cyan&#34;</span>: <span style="color:#e6db74">&#34;#1a83a6&#34;</span>,
+            <span style="color:#f92672">&#34;white&#34;</span>: <span style="color:#e6db74">&#34;#cacaca&#34;</span>,
+            <span style="color:#f92672">&#34;brightBlack&#34;</span>: <span style="color:#e6db74">&#34;#7c7c7c&#34;</span>,
+            <span style="color:#f92672">&#34;brightRed&#34;</span>: <span style="color:#e6db74">&#34;#f3044b&#34;</span>,
+            <span style="color:#f92672">&#34;brightGreen&#34;</span>: <span style="color:#e6db74">&#34;#8dd006&#34;</span>,
+            <span style="color:#f92672">&#34;brightYellow&#34;</span>: <span style="color:#e6db74">&#34;#cccc81&#34;</span>,
+            <span style="color:#f92672">&#34;brightBlue&#34;</span>: <span style="color:#e6db74">&#34;#0383f5&#34;</span>,
+            <span style="color:#f92672">&#34;brightPurple&#34;</span>: <span style="color:#e6db74">&#34;#a87db8&#34;</span>,
+            <span style="color:#f92672">&#34;brightCyan&#34;</span>: <span style="color:#e6db74">&#34;#58c2e5&#34;</span>,
+            <span style="color:#f92672">&#34;brightWhite&#34;</span>: <span style="color:#e6db74">&#34;#ffffff&#34;</span>,
+            <span style="color:#f92672">&#34;background&#34;</span>: <span style="color:#e6db74">&#34;#272822&#34;</span>,
+            <span style="color:#f92672">&#34;foreground&#34;</span>: <span style="color:#e6db74">&#34;#cacaca&#34;</span>,
+            <span style="color:#f92672">&#34;selectionBackground&#34;</span>: <span style="color:#e6db74">&#34;#cccc81&#34;</span>,
+            <span style="color:#f92672">&#34;cursorColor&#34;</span>: <span style="color:#e6db74">&#34;#ffffff&#34;</span>
+        }
+    ],
+
+    <span style="color:#f92672">&#34;actions&#34;</span>:
+    [
+        { <span style="color:#f92672">&#34;command&#34;</span>: {<span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;copy&#34;</span>, <span style="color:#f92672">&#34;singleLine&#34;</span>: <span style="color:#66d9ef">false</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+c&#34;</span> },
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;paste&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+v&#34;</span> },
+
+        <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Press</span> <span style="color:#960050;background-color:#1e0010">Ctrl+Shift+F</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">open</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">search</span> <span style="color:#960050;background-color:#1e0010">box</span>
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;find&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+f&#34;</span> },
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;newTab&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+t&#34;</span> },
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;nextTab&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+j&#34;</span> },
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;prevTab&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+k&#34;</span> },
+        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;closeTab&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w&#34;</span> },
+
+        <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Press</span> <span style="color:#960050;background-color:#1e0010">Alt+Shift+D</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">open</span> <span style="color:#960050;background-color:#1e0010">a</span> <span style="color:#960050;background-color:#1e0010">new</span> <span style="color:#960050;background-color:#1e0010">pane.</span>
+        <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#e6db74">&#34;split&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;auto&#34;</span> <span style="color:#960050;background-color:#1e0010">makes</span> <span style="color:#960050;background-color:#1e0010">this</span> <span style="color:#960050;background-color:#1e0010">pane</span> <span style="color:#960050;background-color:#1e0010">open</span> <span style="color:#960050;background-color:#1e0010">in</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">direction</span> <span style="color:#960050;background-color:#1e0010">that</span> <span style="color:#960050;background-color:#1e0010">provides</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">most</span> <span style="color:#960050;background-color:#1e0010">surface</span> <span style="color:#960050;background-color:#1e0010">area.</span>
+        <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#e6db74">&#34;splitMode&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> <span style="color:#e6db74">&#34;duplicate&#34;</span> <span style="color:#960050;background-color:#1e0010">makes</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">new</span> <span style="color:#960050;background-color:#1e0010">pane</span> <span style="color:#960050;background-color:#1e0010">use</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">focused</span> <span style="color:#960050;background-color:#1e0010">pane&#39;s</span> <span style="color:#960050;background-color:#1e0010">profile.</span>
+        <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">To</span> <span style="color:#960050;background-color:#1e0010">learn</span> <span style="color:#960050;background-color:#1e0010">more</span> <span style="color:#960050;background-color:#1e0010">about</span> <span style="color:#960050;background-color:#1e0010">panes</span>, <span style="color:#960050;background-color:#1e0010">visit</span> <span style="color:#960050;background-color:#1e0010">https://aka.ms/terminal-panes</span>
+        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;splitPane&#34;</span>, <span style="color:#f92672">&#34;split&#34;</span>: <span style="color:#e6db74">&#34;auto&#34;</span>, <span style="color:#f92672">&#34;splitMode&#34;</span>: <span style="color:#e6db74">&#34;duplicate&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+shift+d&#34;</span> }
+    ]
+}
+</code></pre></div><h3 id="video-editing">Video Editing</h3>
+<p>Moving from using Adobe Premier Pro to DaVinci Resolve mainly because of the GPU enhancements provided with DaVinci Resolve and it is free version offers enough for me to work with.
+However the shortcuts that I am familar with are described below for future reference.</p>
+<h4 id="shortcuts">Shortcuts</h4>
+<table>
+<thead>
+<tr>
+<th>Command  Name</th>
+<th>Shortcut Key</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zoom In</td>
+<td>=</td>
+<td></td>
+</tr>
+<tr>
+<td>Zoom Out</td>
+<td>+</td>
+<td></td>
+</tr>
+<tr>
+<td>Ripple Delete</td>
+<td>Shift + D</td>
+<td></td>
+</tr>
+<tr>
+<td>Selection Follows Playhead</td>
+<td>D</td>
+<td></td>
+</tr>
+<tr>
+<td>Razor</td>
+<td>Ctrl + D</td>
+<td></td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>J</td>
+<td></td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>K</td>
+<td></td>
+</tr>
+<tr>
+<td>Forward</td>
+<td>L</td>
+<td></td>
+</tr>
+<tr>
+<td>Frame Reverse</td>
+<td>H</td>
+<td></td>
+</tr>
+<tr>
+<td>Frame Forward</td>
+<td>;</td>
+<td></td>
+</tr>
+<tr>
+<td>Clip Edit Previous</td>
+<td>Ctrl + H</td>
+<td>Command name for this is under the heading previous</td>
+</tr>
+<tr>
+<td>Clip Edit Next</td>
+<td>Ctrl + ;</td>
+<td>Command name for this is under the heading next</td>
+</tr>
+<tr>
+<td>Shift Clip Up</td>
+<td>Alt + Up</td>
+<td>Cannot modify this yet. It seems like a bug</td>
+</tr>
+<tr>
+<td>Shift Clip Down</td>
+<td>Alt + Down</td>
+<td>Cannot modify this yet. It seems like a bug</td>
+</tr>
+<tr>
+<td>Trim Start</td>
+<td>Q</td>
+<td></td>
+</tr>
+<tr>
+<td>Trim End</td>
+<td>W</td>
+<td></td>
+</tr>
+<tr>
+<td>Toggle Slip/Slide</td>
+<td>S</td>
+<td></td>
+</tr>
+<tr>
+<td>Nudge Left</td>
+<td>,</td>
+<td>Useful in Trim Mode with either slip/slide</td>
+</tr>
+<tr>
+<td>Nudge Right</td>
+<td>.</td>
+<td>Useful in Trim Mode with either slip/slide</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dot-bashrc">.bashrc</h3>
+<h4 id="wsl">wsl</h4>
+<p>This is used for running an Xserver in WSL</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export DISPLAY_NUMBER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0.0&#34;</span>
+export DISPLAY<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>grep -m <span style="color:#ae81ff">1</span> nameserver /etc/resolv.conf | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span><span style="color:#66d9ef">)</span>:$DISPLAY_NUMBER
+export LIBGL_ALWAYS_INDIRECT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</code></pre></div><h4 id="alias">alias</h4>
+<p>Simple alias just to replace fdfind with fd</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alias fdfind<span style="color:#f92672">=</span>fd
+</code></pre></div><h4 id="python">python</h4>
+<p>setting <code>WORKON_HOME</code> is required to switch between virtual envs from emacs
+the second line should part of the poetry installation process.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># Poetry setup</span>
+export WORKON_HOME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/.cache/pypoetry/virtualenvs&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.poetry/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>this should be automatically put in as part of the installation process when install pyenv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">export PYENV_ROOT<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.pyenv&#34;</span>
+export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$PYENV_ROOT<span style="color:#e6db74">/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">if</span> command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; <span style="color:#66d9ef">then</span>
+    eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">fi</span>
+</code></pre></div><h4 id="fish-shell">fish shell</h4>
+<p>Launch fish shell when everything has set been setup. However it will not always be the case that has been set in <code>.bashrc</code> is available in fish shell.
+These would have to be set again explicitly in the fish sell config file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">fish
+</code></pre></div><h3 id="config-dot-fish">config.fish</h3>
+<p>A nice <a href="https://stackoverflow.com/questions/2762994/define-an-alias-in-fish-shell">SO question</a> of how set up alias and the different options available.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">alias fdfind<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fd&#34;</span>
+</code></pre></div><h3 id="dot-profile">.profile</h3>
+<p><code>.profile</code> are meant to be run once, where as <code>.bashrc</code> are mean to run for each new session.
+However during the installation scripts of some of the software, they will put environment variables places you didn&rsquo;t expect.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># https://www.taingram.org/blog/emacs-client.html</span>
+emacs --daemon
+VISUAL<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;emacsclient -t&#39;</span>
+export VISUAL
+</code></pre></div><h3 id="dot-xmodmap">.Xmodmap</h3>
+<p>This is used to remap CAPSLOCK (66) to Left Control (Control_L)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">clear lock
+clear control
+keycode 66 <span style="color:#f92672">=</span> Control_L
+add control <span style="color:#f92672">=</span> Control_L Control_R
+</code></pre></div><h3 id="spacemacs">Spacemacs</h3>
+<p>Currenlty Spacemacs is my main IDE for work and personal use. This was my gateway tool that got me into using Emacs.
+I have tried using doom Emacs, and roll my own config but I liked how easy it was to get up and running with Spacemacs with minimal configuration.</p>
+<p>Another thing for using spacemacs was the ability to use the same key bindings in VSCODE using the <a href="https://github.com/VSpaceCode/VSpaceCode">VSpaceCode</a> extension.</p>
+<p>I have decided to use <a href="https://orgmode.org/">org-mode</a> to manage my .spacemacs configuration.
+I haven&rsquo;t done anything advanced, and tried to keep it a simple as possible for now.
+Currently I just want to document some of the reasonings for my configuration and be able to keep it one place.</p>
+<h4 id="dotspacemacs-layers">dotspacemacs/layers</h4>
+<p>Layer configuration: This function should only modify configuration layer settings.
+Ideally I would have liked to epxlain each of the layers what I was using and why, but I haven&rsquo;t figured out a clean way to do this, while managing my configuration with org file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun dotspacemacs/layers ()
+  (setq-default
+   dotspacemacs-distribution <span style="color:#e6db74">&#39;spacemacs</span>
+   dotspacemacs-enable-lazy-installation <span style="color:#e6db74">&#39;unused</span>
+   dotspacemacs-ask-for-lazy-installation <span style="color:#66d9ef">t</span>
+   dotspacemacs-configuration-layer-path <span style="color:#f92672">&#39;</span>()
+
+   dotspacemacs-configuration-layers
+   <span style="color:#f92672">&#39;</span>(
+     rust
+   shell-scripts
+   markdown
+   csv
+   lsp
+   html
+   terraform
+   clojure
+   docker
+   yaml
+   dap
+   lsp
+   syntax-checking
+   themes-megapack
+   better-defaults
+   emacs-lisp
+   treemacs
+   git
+   spell-checking
+
+   (ranger :variables ranger-cleanup-on-disable <span style="color:#66d9ef">t</span>)
+   (ibuffer :variables
+             ibuffer-group-buffers-by <span style="color:#e6db74">&#39;modes</span>)
+   (python :variables
+           python-test-runner <span style="color:#e6db74">&#39;pytest</span>
+           python-formatter <span style="color:#e6db74">&#39;black</span>
+           python-backend <span style="color:#e6db74">&#39;lsp</span>
+           python-lsp-server <span style="color:#e6db74">&#39;mspyls</span>
+           python-lsp-git-root <span style="color:#e6db74">&#34;~/dev/python/python-language-server&#34;</span>)
+
+   (helm :variables
+         helm-mode-fuzzy-match <span style="color:#66d9ef">t</span>
+         helm-completion-in-region-fuzzy-match <span style="color:#66d9ef">t</span>)
+   (colors :variables colors-enable-nyan-cat-progress-bar <span style="color:#66d9ef">t</span>)
+   (org :variables
+         org-want-todo-bindings <span style="color:#66d9ef">t</span>
+         org-enable-hugo-support <span style="color:#66d9ef">t</span>)
+   (shell :variables
+           shell-default-shell <span style="color:#e6db74">&#39;vterm</span>)
+   (latex :variables
+           latex-enable-auto-fill <span style="color:#66d9ef">t</span>
+           latex-build-command <span style="color:#e6db74">&#34;LaTeX&#34;</span>)
+
+   <span style="color:#75715e">;; version-control</span>
+   <span style="color:#75715e">;; (auto-completion :variables</span>
+   <span style="color:#75715e">;;                  auto-completion-enable-help-tooltip t</span>
+   <span style="color:#75715e">;;                  auto-completion-enable-snippets-in-popup &#39;manual)</span>
+   )
+
+   dotspacemacs-additional-packages <span style="color:#f92672">&#39;</span>(pocket-reader
+                                      doom-themes
+                                      ox-hugo
+                                      pretty-mode
+                                      )
+
+
+
+   dotspacemacs-frozen-packages <span style="color:#f92672">&#39;</span>()
+   dotspacemacs-excluded-packages <span style="color:#f92672">&#39;</span>()
+   dotspacemacs-install-packages <span style="color:#e6db74">&#39;used-only</span>))
+</code></pre></div><h4 id="dotspacemacs-init">dotspacemacs/init</h4>
+<p>This function is called at the very beginning of Spacemacs startup,
+before layer configuration. It should only modify the values of Spacemacs settings.</p>
+<p>I haven&rsquo;t changed much here, mostly cosmetic things such as themes and fonts.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun dotspacemacs/init ()
+  (setq-default
+   dotspacemacs-enable-emacs-pdumper <span style="color:#66d9ef">nil</span>
+   dotspacemacs-emacs-pdumper-executable-file <span style="color:#e6db74">&#34;emacs-27.0.50&#34;</span>
+   dotspacemacs-emacs-dumper-dump-file <span style="color:#e6db74">&#34;spacemacs.pdmp&#34;</span>
+   dotspacemacs-elpa-https <span style="color:#66d9ef">t</span>
+   dotspacemacs-elpa-timeout <span style="color:#ae81ff">5</span>
+   dotspacemacs-gc-cons <span style="color:#f92672">&#39;</span>(<span style="color:#ae81ff">100000000</span> <span style="color:#ae81ff">0.1</span>)
+   dotspacemacs-use-spacelpa <span style="color:#66d9ef">nil</span>
+   dotspacemacs-verify-spacelpa-archives <span style="color:#66d9ef">nil</span>
+   dotspacemacs-check-for-update <span style="color:#66d9ef">nil</span>
+   dotspacemacs-elpa-subdirectory <span style="color:#e6db74">&#39;emacs-version</span>
+   dotspacemacs-editing-style <span style="color:#e6db74">&#39;vim</span>
+   dotspacemacs-verbose-loading <span style="color:#66d9ef">nil</span>
+   dotspacemacs-startup-banner <span style="color:#e6db74">&#39;official</span>
+   dotspacemacs-startup-lists <span style="color:#f92672">&#39;</span>((recents <span style="color:#f92672">.</span> <span style="color:#ae81ff">5</span>)
+                                (projects <span style="color:#f92672">.</span> <span style="color:#ae81ff">7</span>))
+
+   dotspacemacs-startup-buffer-responsive <span style="color:#66d9ef">t</span>
+   dotspacemacs-scratch-mode <span style="color:#e6db74">&#39;text-mode</span>
+   dotspacemacs-initial-scratch-message <span style="color:#66d9ef">nil</span>
+
+   dotspacemacs-themes <span style="color:#f92672">&#39;</span>(
+                         spacemacs-light
+                         tangotango
+                         twilight-bright
+                         darkokai
+                         ujelly
+                         alect-dark
+                         espresso
+                         tsdh-dark
+                         professional
+                         monokai
+                         brin
+                         spacemacs-dark
+                         doom-nord-light
+                         )
+
+   dotspacemacs-mode-line-theme <span style="color:#f92672">&#39;</span>(all-the-icons :separator wave :separator-scale <span style="color:#ae81ff">1.5</span>)
+   dotspacemacs-colorize-cursor-according-to-state <span style="color:#66d9ef">t</span>
+   dotspacemacs-default-font <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;Source Code Pro&#34;</span>
+                               :size <span style="color:#ae81ff">16</span>
+                               :weight normal
+                               :width normal)
+
+   dotspacemacs-leader-key <span style="color:#e6db74">&#34;SPC&#34;</span>
+   dotspacemacs-emacs-command-key <span style="color:#e6db74">&#34;SPC&#34;</span>
+   dotspacemacs-ex-command-key <span style="color:#e6db74">&#34;:&#34;</span>
+   dotspacemacs-emacs-leader-key <span style="color:#e6db74">&#34;M-m&#34;</span>
+   dotspacemacs-major-mode-leader-key <span style="color:#e6db74">&#34;,&#34;</span>
+   dotspacemacs-major-mode-emacs-leader-key <span style="color:#e6db74">&#34;C-M-m&#34;</span>
+   dotspacemacs-distinguish-gui-tab <span style="color:#66d9ef">nil</span>
+   dotspacemacs-default-layout-name <span style="color:#e6db74">&#34;Default&#34;</span>
+   dotspacemacs-display-default-layout <span style="color:#66d9ef">nil</span>
+   dotspacemacs-auto-resume-layouts <span style="color:#66d9ef">nil</span>
+   dotspacemacs-auto-generate-layout-names <span style="color:#66d9ef">nil</span>
+   dotspacemacs-large-file-size <span style="color:#ae81ff">1</span>
+   dotspacemacs-auto-save-file-location <span style="color:#e6db74">&#39;cache</span>
+   dotspacemacs-max-rollback-slots <span style="color:#ae81ff">5</span>
+   dotspacemacs-enable-paste-transient-state <span style="color:#66d9ef">nil</span>
+   dotspacemacs-which-key-delay <span style="color:#ae81ff">0.4</span>
+   dotspacemacs-which-key-position <span style="color:#e6db74">&#39;bottom</span>
+   dotspacemacs-switch-to-buffer-prefers-purpose <span style="color:#66d9ef">nil</span>
+   dotspacemacs-loading-progress-bar <span style="color:#66d9ef">t</span>
+   dotspacemacs-fullscreen-at-startup <span style="color:#66d9ef">nil</span>
+   dotspacemacs-fullscreen-use-non-native <span style="color:#66d9ef">nil</span>
+   dotspacemacs-maximized-at-startup <span style="color:#66d9ef">nil</span>
+   dotspacemacs-active-transparency <span style="color:#ae81ff">90</span>
+   dotspacemacs-inactive-transparency <span style="color:#ae81ff">90</span>
+   dotspacemacs-show-transient-state-title <span style="color:#66d9ef">t</span>
+   dotspacemacs-show-transient-state-color-guide <span style="color:#66d9ef">t</span>
+   dotspacemacs-mode-line-unicode-symbols <span style="color:#66d9ef">t</span>
+   dotspacemacs-smooth-scrolling <span style="color:#66d9ef">t</span>
+   dotspacemacs-line-numbers <span style="color:#66d9ef">nil</span>
+   dotspacemacs-folding-method <span style="color:#e6db74">&#39;origami</span>
+   dotspacemacs-smartparens-strict-mode <span style="color:#66d9ef">nil</span>
+   dotspacemacs-smart-closing-parenthesis <span style="color:#66d9ef">nil</span>
+   dotspacemacs-highlight-delimiters <span style="color:#e6db74">&#39;all</span>
+   dotspacemacs-enable-server <span style="color:#66d9ef">nil</span>
+   dotspacemacs-server-socket-dir <span style="color:#66d9ef">nil</span>
+   dotspacemacs-persistent-server <span style="color:#66d9ef">nil</span>
+   dotspacemacs-search-tools <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;rg&#34;</span> <span style="color:#e6db74">&#34;ag&#34;</span> <span style="color:#e6db74">&#34;pt&#34;</span> <span style="color:#e6db74">&#34;ack&#34;</span> <span style="color:#e6db74">&#34;grep&#34;</span>)
+   dotspacemacs-frame-title-format <span style="color:#e6db74">&#34;%I@%S&#34;</span>
+   dotspacemacs-icon-title-format <span style="color:#66d9ef">nil</span>
+   dotspacemacs-whitespace-cleanup <span style="color:#e6db74">&#34;trailing&#34;</span>
+   dotspacemacs-zone-out-when-idle <span style="color:#66d9ef">nil</span>
+   dotspacemacs-pretty-docs <span style="color:#66d9ef">nil</span>))
+</code></pre></div><h4 id="dotspacemacs-user">dotspacemacs/user</h4>
+<p>As you can see below not much is customized or added here by me. So have just copied and pasted directly from the default <code>.spacemacs</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">(defun dotspacemacs/user-env ()
+  <span style="color:#e6db74">&#34;Environment variables setup.
+</span><span style="color:#e6db74">This function defines the environment variables for your Emacs session. By
+</span><span style="color:#e6db74">default it calls </span><span style="color:#e6db74">`spacemacs/load-spacemacs-env&#39;</span><span style="color:#e6db74"> which loads the environment
+</span><span style="color:#e6db74">variables declared in </span><span style="color:#e6db74">`~/.spacemacs.env&#39;</span><span style="color:#e6db74"> or </span><span style="color:#e6db74">`~/.spacemacs.d/.spacemacs.env&#39;</span><span style="color:#e6db74">.
+</span><span style="color:#e6db74">See the header of this file for more information.&#34;</span>
+  (spacemacs/load-spacemacs-env))
+
+(defun dotspacemacs/user-init ()
+  <span style="color:#e6db74">&#34;Initialization for user code:
+</span><span style="color:#e6db74">This function is called immediately after </span><span style="color:#e6db74">`dotspacemacs/init&#39;</span><span style="color:#e6db74">, before layer
+</span><span style="color:#e6db74">configuration.
+</span><span style="color:#e6db74">It is mostly for variables that should be set before packages are loaded.
+</span><span style="color:#e6db74">If you are unsure, try setting them in </span><span style="color:#e6db74">`dotspacemacs/user-config&#39;</span><span style="color:#e6db74"> first.&#34;</span>
+  )
+
+(defun dotspacemacs/user-load ()
+  <span style="color:#e6db74">&#34;Library to load while dumping.
+</span><span style="color:#e6db74">This function is called only while dumping Spacemacs configuration. You can
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">`require&#39;</span><span style="color:#e6db74"> or </span><span style="color:#e6db74">`load&#39;</span><span style="color:#e6db74"> the libraries of your choice that will be included in the
+</span><span style="color:#e6db74">dump.&#34;</span>
+  )
+</code></pre></div><h4 id="dotspacemacs-user-config">dotspacemacs/user-config</h4>
+<p>This is the bulk of where my customization occurs. One of the issues that I have had is this has things in it, which I am sure what exactly it does.
+By switching to this org-mode configuration I am hoping to have a better idea of why I have some of these code snippets.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+
+     (defun dotspacemacs/user-config ()
+
+
+       (load-file <span style="color:#e6db74">&#34;user-config.el&#34;</span>)
+
+)
+</code></pre></div><h4 id="clojure">clojure</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+(add-hook <span style="color:#e6db74">&#39;clojure-mode-hook</span> <span style="color:#a6e22e">#&#39;</span>aggressive-indent-mode)
+(setq clojure-indent-style <span style="color:#e6db74">&#39;align-arguments</span>)
+(setq clojure-align-forms-automatically <span style="color:#66d9ef">t</span>)
+</code></pre></div><h4 id="windows-nt">windows_nt</h4>
+<p>This section is only really relevant when running Emacs in Windows (i.e. not WSL).
+With the introduction of WSL as part of windows 10, this doesn&rsquo;t seem so relevant now.</p>
+<p>The main point of this was for spell checking in windows 10.
+Also included is a GUI prompt for when I am using git/ssh with a password.
+This wasn&rsquo;t an issue when using linux.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+(cond
+ ((<span style="color:#a6e22e">string-equal</span> system-type <span style="color:#e6db74">&#34;windows-nt&#34;</span>)
+  (progn
+    (setenv <span style="color:#e6db74">&#34;GIT_ASKPASS&#34;</span> <span style="color:#e6db74">&#34;git-gui--askpass&#34;</span>)
+    (setenv <span style="color:#e6db74">&#34;SSH_ASKPASS&#34;</span> <span style="color:#e6db74">&#34;git-gui--askpass&#34;</span>)
+
+    (setq ispell-program-name <span style="color:#e6db74">&#34;~/Hunspell/bin/hunspell.exe&#34;</span>)
+    (setenv <span style="color:#e6db74">&#34;LANG&#34;</span> <span style="color:#e6db74">&#34;en_US&#34;</span>)
+    (setq ispell-chage-dictionary <span style="color:#e6db74">&#34;en_US&#34;</span>)
+    (setq ispell-hunspell-dict-paths-alist
+          <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;en_US&#34;</span> <span style="color:#e6db74">&#34;~/Hunspell/share/hunspell/en_GB.aff&#34;</span>)))
+    )))
+</code></pre></div><h4 id="eshell">eshell</h4>
+<p>Eshell customization, however I have slowly migrated to using vterm as it meets most of my needs now.
+This is kept here for the occasional where I would like to explore eshell functionalities further.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+<span style="color:#75715e">;; Eshell</span>
+<span style="color:#75715e">;; https://www.emacswiki.org/emacs/EshellPrompt</span>
+(defun shortened-path (path max-len)
+  <span style="color:#e6db74">&#34;Return a modified version of </span><span style="color:#e6db74">`path&#39;</span><span style="color:#e6db74">, replacing some components
+</span><span style="color:#e6db74">with single characters starting from the left to try and get
+</span><span style="color:#e6db74">the path down to </span><span style="color:#e6db74">`max-len&#39;</span><span style="color:#e6db74">&#34;</span>
+  (let* ((components (split-string (abbreviate-file-name path) <span style="color:#e6db74">&#34;/&#34;</span>))
+         (len (<span style="color:#a6e22e">+</span> (<span style="color:#a6e22e">1-</span> (<span style="color:#a6e22e">length</span> components))
+                 (reduce <span style="color:#e6db74">&#39;+</span> components :key <span style="color:#e6db74">&#39;length</span>)))
+         (str <span style="color:#e6db74">&#34;&#34;</span>))
+    (while (and (<span style="color:#a6e22e">&gt;</span> len max-len)
+                (<span style="color:#a6e22e">cdr</span> components))
+      (setq str (<span style="color:#a6e22e">concat</span> str (if (<span style="color:#a6e22e">=</span> <span style="color:#ae81ff">0</span> (<span style="color:#a6e22e">length</span> (<span style="color:#a6e22e">car</span> components)))
+                                <span style="color:#e6db74">&#34;/&#34;</span>
+                              (<span style="color:#a6e22e">string</span> (<span style="color:#a6e22e">elt</span> (<span style="color:#a6e22e">car</span> components) <span style="color:#ae81ff">0</span>) <span style="color:#e6db74">?/</span>)))
+            len (<span style="color:#a6e22e">-</span> len (<span style="color:#a6e22e">1-</span> (<span style="color:#a6e22e">length</span> (<span style="color:#a6e22e">car</span> components))))
+            components (<span style="color:#a6e22e">cdr</span> components)))
+    (<span style="color:#a6e22e">concat</span> str (reduce (lambda (a b) (<span style="color:#a6e22e">concat</span> a <span style="color:#e6db74">&#34;/&#34;</span> b)) components))))
+
+(setq eshell-prompt-function
+      (lambda ()
+        (<span style="color:#a6e22e">concat</span>
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;┌─[&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> (<span style="color:#a6e22e">user-login-name</span>) <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;red&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;@&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> (<span style="color:#a6e22e">system-name</span>) <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;purple&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;]──[&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> (<span style="color:#a6e22e">format-time-string</span> <span style="color:#e6db74">&#34;%H:%M&#34;</span> (<span style="color:#a6e22e">current-time</span>)) <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;yellow&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;]──[&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> (<span style="color:#a6e22e">concat</span> (shortened-path (eshell/pwd) <span style="color:#ae81ff">40</span>)) <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;white&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;]\n&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> <span style="color:#e6db74">&#34;└─&gt;&#34;</span> <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         (<span style="color:#a6e22e">propertize</span> (if (<span style="color:#a6e22e">=</span> (<span style="color:#a6e22e">user-uid</span>) <span style="color:#ae81ff">0</span>) <span style="color:#e6db74">&#34; # &#34;</span> <span style="color:#e6db74">&#34; $ &#34;</span>) <span style="color:#e6db74">&#39;face</span> <span style="color:#f92672">`</span>(:foreground <span style="color:#e6db74">&#34;green&#34;</span>))
+         )))
+
+
+(defun make-shell (name)
+  <span style="color:#e6db74">&#34;Create a shell buffer named NAME.&#34;</span>
+  (interactive <span style="color:#e6db74">&#34;sName: &#34;</span>)
+  (setq name (<span style="color:#a6e22e">concat</span> <span style="color:#e6db74">&#34;eshell-&#34;</span> name))
+  (eshell)
+  (<span style="color:#a6e22e">rename-buffer</span> name))
+</code></pre></div><h4 id="ox-hugo">ox-hugo</h4>
+<p>Require for my current blogging setup.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+(use-package ox-hugo
+  :ensure <span style="color:#66d9ef">t</span>
+  :after ox)
+</code></pre></div><h4 id="org-mode">org-mode</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+
+(setq org-cycle-separator-lines <span style="color:#ae81ff">0</span>)
+
+
+
+
+(setq org-src-tab-acts-natively <span style="color:#66d9ef">t</span>)
+
+(org-babel-do-load-languages
+ <span style="color:#e6db74">&#39;org-babel-load-languages</span>
+ <span style="color:#f92672">&#39;</span>(
+   (python <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+   (shell <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+   (clojure <span style="color:#f92672">.</span> <span style="color:#66d9ef">t</span>)
+   ))
+
+(setq org-confirm-babel-evaluate <span style="color:#66d9ef">nil</span>)
+(setq org-directory <span style="color:#e6db74">&#34;~/Dropbox/org/i.org&#34;</span>)
+
+(setq org-agenda-files <span style="color:#f92672">&#39;</span>(<span style="color:#e6db74">&#34;~/Dropbox/org/i.org&#34;</span>
+                         <span style="color:#e6db74">&#34;~/Dropbox/org/k.org&#34;</span>))
+
+(setq org-capture-templates
+      <span style="color:#f92672">&#39;</span>((<span style="color:#e6db74">&#34;t&#34;</span> <span style="color:#e6db74">&#34;To Do Item&#34;</span> entry (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/i.org&#34;</span> <span style="color:#e6db74">&#34;Inbox&#34;</span>)
+         <span style="color:#e6db74">&#34;* TODO %?\nCREATED:%U&#34;</span> :prepend <span style="color:#66d9ef">t</span>)
+        (<span style="color:#e6db74">&#34;j&#34;</span> <span style="color:#e6db74">&#34;Journal&#34;</span> entry (file+datetree+prompt <span style="color:#e6db74">&#34;~/Dropbox/org/j.org&#34;</span>)
+         <span style="color:#e6db74">&#34;* %?\n %t&#34;</span>)
+        (<span style="color:#e6db74">&#34;k&#34;</span> <span style="color:#e6db74">&#34;knowledge&#34;</span> entry (file+olp+datetree <span style="color:#e6db74">&#34;~/Dropbox/org/j.org&#34;</span>)
+         <span style="color:#e6db74">&#34;* %? %^g\n&#34;</span>)
+        (<span style="color:#e6db74">&#34;d&#34;</span> <span style="color:#e6db74">&#34;distracted&#34;</span> table-line (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/j.org&#34;</span> <span style="color:#e6db74">&#34;Distractions&#34;</span>)
+         <span style="color:#e6db74">&#34;|%?||%U|&#34;</span>)
+        (<span style="color:#e6db74">&#34;h&#34;</span> <span style="color:#e6db74">&#34;habit&#34;</span> table-line (file+headline  <span style="color:#e6db74">&#34;~/Dropbox/org/j.org&#34;</span> <span style="color:#e6db74">&#34;Habit&#34;</span>)
+         <span style="color:#e6db74">&#34;|%^{prompt|meditate|pushups|situps}|%?|%U|&#34;</span>)
+        (<span style="color:#e6db74">&#34;m&#34;</span> <span style="color:#e6db74">&#34;mood&#34;</span> table-line (file+headline <span style="color:#e6db74">&#34;~/Dropbox/org/j.org&#34;</span> <span style="color:#e6db74">&#34;Mood&#34;</span>)
+         <span style="color:#e6db74">&#34;|%?||%U|&#34;</span>)))
+
+
+(setq org-archive-location <span style="color:#e6db74">&#34;%s_archive::datetree/* Archived Tasks&#34;</span>)
+</code></pre></div><h4 id="misc">misc</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-elisp" data-lang="elisp">
+<span style="color:#75715e">;; (require &#39;org-tempo)</span>
+
+(setq python-indent-guess-indent-offset <span style="color:#66d9ef">nil</span>)
+(setq helm-show-completion-display-function <span style="color:#a6e22e">#&#39;</span>helm-show-completion-default-display-function)
+(setq-default buffer-file-coding-system <span style="color:#e6db74">&#39;utf-8-unix</span>)
+</code></pre></div><h4 id="futher-resources">Futher resources</h4>
+<p>There are some other interesting spacemac configurtations that I have come across that I would like to spend more time going through and copying some of the the relevant things across.</p>
+<ul>
+<li><a href="https://github.com/toshism/dotfiles/tree/master/spacemacs">https://github.com/toshism/dotfiles/tree/master/spacemacs</a></li>
+<li><a href="https://labs.phundrak.com/phundrak/dotfiles/src/branch/master/org/config/emacs.org">https://labs.phundrak.com/phundrak/dotfiles/src/branch/master/org/config/emacs.org</a></li>
+<li><a href="https://out-of-cheese-error.netlify.app/spacemacs-config">https://out-of-cheese-error.netlify.app/spacemacs-config</a></li>
+<li><a href="https://github.com/pniedzielski/dotfiles-ng">https://github.com/pniedzielski/dotfiles-ng</a></li>
+</ul>
+<p>If I was ever to switch to doom emacs then this might worth considering</p>
+<ul>
+<li><a href="https://github.com/lccambiaghi/.doom.d">https://github.com/lccambiaghi/.doom.d</a></li>
+</ul>
+<h3 id="work-computer-stuff">work computer stuff</h3>
+<h4 id="ssh-keys">ssh-keys</h4>
+<p><a href="https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/">https://support.atlassian.com/bitbucket-cloud/docs/set-up-an-ssh-key/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+ssh-keygen
+</code></pre></div><p>Copy the following and add it to bitbucket</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat ~/.ssh/id_rsa.pub
+</code></pre></div><h4 id="install-terraform">install terraform</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cd ~
+wget https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+sudo apt-get install unzip
+unzip terraform_0.12.28_linux_amd64.zip
+mv terraform /usr/local/bin/terraform
+</code></pre></div><h4 id="rdp-connection">rdp connection</h4>
+<p>This allows us to use a windows machine to connect to Ubuntu using Citrix and Remote Desktop Connection
+Most of the information is from here: <a href="https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-18-04/">https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-18-04/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+sudo apt-get install xorg dbus-x11 x11-xserver-utils
+sudo apt-get install xrdp
+
+
+sudo adduser xrdp ssl-cert
+sudo systemctl restart xrdp
+
+sudo ufw allow <span style="color:#ae81ff">3389</span>
+<span style="color:#75715e"># or</span>
+sudo ufw allow from 192.168.1.0/24 to any port <span style="color:#ae81ff">3389</span>
+
+sudo systemctl enable xrdp
+</code></pre></div><pre><code>There is also an issue with regards an authentication popup that occurs when you lock the sreen, and when you login initially.
+</code></pre>
+<p>The information is contained here: <a href="https://c-nergy.be/blog/?p=14051">https://c-nergy.be/blog/?p=14051</a></p>
+<p>Two files need to be created:</p>
+<p>In <code>/etc/polkit-1/localauthority/50-local.d/</code> there needs to be two files.</p>
+<p>45-allow-colord.pkla</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">Allow</span> <span style="color:#a6e22e">Colord</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">Users</span>]
+<span style="color:#a6e22e">Identity</span>=<span style="color:#a6e22e">unix</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">user</span><span style="color:#960050;background-color:#1e0010">:*</span>
+<span style="color:#a6e22e">Action</span>=<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">create</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">device</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">create</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">profile</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">delete</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">device</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">delete</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">profile</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">modify</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">device</span><span style="color:#960050;background-color:#1e0010">;</span><span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">color</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">manager</span>.<span style="color:#a6e22e">modify</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">profile</span>
+<span style="color:#a6e22e">ResultAny</span>=<span style="color:#a6e22e">no</span>
+<span style="color:#a6e22e">ResultInactive</span>=<span style="color:#a6e22e">no</span>
+<span style="color:#a6e22e">ResultActive</span>=<span style="color:#a6e22e">yes</span>
+</code></pre></div><p>46-allow-update-repo.pkla</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml">[<span style="color:#a6e22e">Allow</span> <span style="color:#a6e22e">Package</span> <span style="color:#a6e22e">Management</span> <span style="color:#a6e22e">all</span> <span style="color:#a6e22e">Users</span>]
+<span style="color:#a6e22e">Identity</span>=<span style="color:#a6e22e">unix</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">user</span><span style="color:#960050;background-color:#1e0010">:*</span>
+<span style="color:#a6e22e">Action</span>=<span style="color:#a6e22e">org</span>.<span style="color:#a6e22e">freedesktop</span>.<span style="color:#a6e22e">packagekit</span>.<span style="color:#a6e22e">system</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">sources</span><span style="color:#960050;background-color:#1e0010">-</span><span style="color:#a6e22e">refresh</span>
+<span style="color:#a6e22e">ResultAny</span>=<span style="color:#a6e22e">yes</span>
+<span style="color:#a6e22e">ResultInactive</span>=<span style="color:#a6e22e">yes</span>
+<span style="color:#a6e22e">ResultActive</span>=<span style="color:#a6e22e">yes</span>
+</code></pre></div><h4 id="display-monitors-go-blank">display monitors go blank</h4>
+<p>If this happens generally all that is required is an update of the packages and a restart
+The nvidia drivers are what get updated, and this usually fixes the issue</p>
+<p>look at xrandr and arandr to further debug the problem if the following doesn&rsquo;t fix it</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get update
+sudo apt-get upgrade
+</code></pre></div><h4 id="ubuntu-workstations">ubuntu workstations</h4>
+<pre><code class="language-nil" data-lang="nil">apt update;
+sudo apt-get install landscape-client;
+sudo landscape-config -t hostname --account-name visma-it-communications-as --tags=Country-Norway, Division-IT_and_Hosting, Desktop, Legal_Unit-Visma_ITC, Organization-Visma_ITC, Team-Process_Automation, Team_Code-507, Username-Sivaharan_Rajkumar --script-users nobody, landscape, root --silent --registration-key=ec220ec878ec97c4a6c6808d1894e691
+</code></pre><h3 id="home-assistant">Home Assistant</h3>
+<p>Home Assistant configuration. How this is set up is described with <a href="https://dilzeem.github.io/posts/home-assitant/">https://dilzeem.github.io/posts/home-assitant/</a>.
+How the automations are set up are described here.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Configure a default setup of Home Assistant (frontend, api, etc)</span>
+<span style="color:#f92672">default_config</span>:
+
+<span style="color:#f92672">group</span>: !<span style="color:#ae81ff">include groups.yaml</span>
+<span style="color:#f92672">automation</span>: !<span style="color:#ae81ff">include automations.yaml</span>
+<span style="color:#f92672">script</span>: !<span style="color:#ae81ff">include scripts.yaml</span>
+<span style="color:#f92672">scene</span>: !<span style="color:#ae81ff">include scenes.yaml</span>
+
+<span style="color:#f92672">tibber</span>:
+  <span style="color:#f92672">access_token</span>: !<span style="color:#ae81ff">secret tibber_token</span>
+
+<span style="color:#f92672">influxdb</span>:
+
+
+<span style="color:#f92672">climate</span>:
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Ania Office Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.kitchen_1</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.ania_office</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Bedroom Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.bedroom</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.bedroom</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Hallway Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.hallway</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.living_room</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Kitchen Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.kitchen_2</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.kitchen</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Living Room L Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.living_room_l</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.living_room</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Living Room R Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.living_room_r</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.living_room</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+
+
+- <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">generic_thermostat</span>
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Siv Office Heater</span>
+  <span style="color:#f92672">heater</span>: <span style="color:#ae81ff">switch.siv_office_2</span>
+  <span style="color:#f92672">target_sensor</span>: <span style="color:#ae81ff">sensor.siv_office</span>
+  <span style="color:#f92672">min_temp</span>: <span style="color:#ae81ff">16.0</span>
+  <span style="color:#f92672">max_temp</span>: <span style="color:#ae81ff">25.0</span>
+  <span style="color:#f92672">ac_mode</span>: <span style="color:#66d9ef">False</span>
+  <span style="color:#f92672">target_temp</span>: <span style="color:#ae81ff">20.0</span>
+  <span style="color:#f92672">cold_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">hot_tolerance</span>: <span style="color:#ae81ff">0.0</span>
+  <span style="color:#f92672">initial_hvac_mode</span>: <span style="color:#e6db74">&#34;off&#34;</span>
+  <span style="color:#f92672">away_temp</span>: <span style="color:#ae81ff">16</span>
+</code></pre></div><h3 id="mu4e"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> mu4e</h3>
+<p>Check the video and see if it will be useful to set up email integration in emacs</p>
+<p><a href="https://www.youtube.com/watch?v=yZRyEhi4y44">https://www.youtube.com/watch?v=yZRyEhi4y44</a></p>
+<h3 id="vscode"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> VSCode</h3>
+<ul>
+<li>extensions that I user</li>
+<li>python setup</li>
+</ul>
+<h2 id="no-longer-used">No longer Used</h2>
+<p>These are just listing packages/tools that I no longer use and the reasonings as to why.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>Leiningen</p>
+<p>Leiningen is essentially the defacto standard in how to build tools, however it seems like there are other alternative approches that make using tool no longer a necessity.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y curl
+curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein &gt; lein
+sudo mv lein /usr/local/bin/lein
+sudo chmod a+x /usr/local/bin/lein
+lein version
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>tldr</p>
+<p><a href="https://tldr.sh/">tldr</a> provides a nicer manual pages than the defaults.
+This was removed as I don&rsquo;t to use this tool too much as I don&rsquo;t live on the command line, and generally I would google any issues I have with a command line tool.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo curl -o /usr/local/bin/tldr https://raw.githubusercontent.com/raylee/tldr/master/tldr
+sudo chmod +x /usr/local/bin/tldr
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>bat</p>
+<p>This provides a nicer version of cat.
+Though I don&rsquo;t seem to be using this much, and if anything I would just you vim/emacs to see the file so I can get a nice features that I would need.</p>
+<p>Need to install cargo first</p>
+<p><a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo cargo install --locked bat
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>autojump</p>
+<p><a href="https://github.com/wting/autojump">Autojump</a> is a better cd though I don&rsquo;t seem to be using it too much as I usually do everything in emacs.</p>
+<p><a href="https://github.com/wting/autojump">https://github.com/wting/autojump</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install autojump
+echo <span style="color:#e6db74">&#39;. /usr/share/autojump/autojump.sh&#39;</span> &gt;&gt; ~/.bashrc
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>neofetch</p>
+<p><a href="https://github.com/dylanaraps/neofetch/wiki/Installation">Neofetch</a> provides a nice launch screen in your terminal. Nothing really that useful, an mainly cosmetic.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install neofetch
+</code></pre></div></li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>exa</p>
+<p><a href="https://github.com/ogham/exa">Exa</a> provides a nicer ls. Not being used as I get something similar within Emacs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y cargo
+cargo install exa
+<span style="color:#75715e"># add /home/dilzeem/.cargo/bin to path</span>
+</code></pre></div></li>
+</ul>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#emacs-and-org-mode">Emacs &amp; Org-mode</a></li>
+      </ul>
+    </li>
+    <li><a href="#active">Active</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#clojure">Clojure</a></li>
+        <li><a href="#font">Font</a></li>
+        <li><a href="#windows-terminal">Windows Terminal</a></li>
+        <li><a href="#video-editing">Video Editing</a></li>
+        <li><a href="#dot-bashrc">.bashrc</a></li>
+        <li><a href="#config-dot-fish">config.fish</a></li>
+        <li><a href="#dot-profile">.profile</a></li>
+        <li><a href="#dot-xmodmap">.Xmodmap</a></li>
+        <li><a href="#spacemacs">Spacemacs</a></li>
+        <li><a href="#work-computer-stuff">work computer stuff</a></li>
+        <li><a href="#home-assistant">Home Assistant</a></li>
+        <li><a href="#mu4e"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> mu4e</a></li>
+        <li><a href="#vscode"><!-- raw HTML omitted -->TODO<!-- raw HTML omitted --> VSCode</a></li>
+      </ul>
+    </li>
+    <li><a href="#no-longer-used">No longer Used</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&text=Managing%20my%20computer%20setup">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&is_video=false&description=Managing%20my%20computer%20setup">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Managing%20my%20computer%20setup&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&title=Managing%20my%20computer%20setup">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&name=Managing%20my%20computer%20setup&description=This%20file%20outlines%20how%20my%20computer%20is%20set%20up.%20With%20all%20the%20tools%20that%20I%20usually%20use.%20By%20documenting%20this%20using%20literate%20programming%20am%20to%20be%20explain%20the%20use%20of%20tools%20and%20maintain%20a%20consistent%20development%20environment%20across%20different%20machines.%20This%20only%20provides%20a%20snapshot%20of%20my%20current%20setup%2c%20however%20the%20latest%20version%20can%20be%20found%20in%20my%20github%20repo.%0aEmacs%20%26amp%3b%20Org-mode%20Org%20mode%20is%20a%20tool%20that%20enables%20me%20to%20document%20my%20configuration%20files%20and%20practice%20literate%20programming.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fmannaging-my-computer-setup%2f&t=Managing%20my%20computer%20setup">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Radiophonic Oddity 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

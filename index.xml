@@ -6,7 +6,17 @@
     <description>Recent content on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 04 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Managing my computer setup</title>
+      <link>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</guid>
+      <description>This file outlines how my computer is set up. With all the tools that I usually use. By documenting this using literate programming am to be explain the use of tools and maintain a consistent development environment across different machines. This only provides a snapshot of my current setup, however the latest version can be found in my github repo.
+Emacs &amp;amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming.</description>
+    </item>
+    
     <item>
       <title>Home Assistant</title>
       <link>https://dilzeem.github.io/posts/home-assitant/</link>
