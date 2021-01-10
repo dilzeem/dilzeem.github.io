@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>datascience on Radiophonic Oddity</title>
+    <link>https://dilzeem.github.io/tags/datascience/</link>
+    <description>Recent content in datascience on Radiophonic Oddity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 May 2019 00:00:00 +0200</lastBuildDate><atom:link href="https://dilzeem.github.io/tags/datascience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I don&#39;t like notebooks</title>
+      <link>https://dilzeem.github.io/posts/i-dont-like-notebooks/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/i-dont-like-notebooks/</guid>
+      <description>I don&amp;rsquo;t like notebooks. That was the title of the youtube video the algorithims had suggest me to watch. How could one not like using Jupyter Notebooks? This was how I learnt to program in python and how I worked through an online deep learning course (fast.ai). What was even more interesting, was that what sparked the speakers to present the talk was from a twitter fued with the primary teacher of fast.</description>
+    </item>
+    
+  </channel>
+</rss>
