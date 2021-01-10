@@ -6,7 +6,17 @@
     <description>Recent content on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo, Emacs and Org Mode</title>
+      <link>https://dilzeem.github.io/posts/hugo-blogging/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/hugo-blogging/</guid>
+      <description>This is just outline how I set up this org mode for my blogging. I use Emacs, Org mode and Hugo. Using Org-Mode I find helps in structuring your thoughts and is a powerful tool that has a lot of capabilities.
+To set up something similar I recommend following along this blog as it has pretty good instructions on how to set up this blog. My own setup is essentially similar with small variations.</description>
+    </item>
+    
     <item>
       <title>Managing my computer setup</title>
       <link>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</link>
