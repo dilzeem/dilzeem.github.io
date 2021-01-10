@@ -24,7 +24,7 @@ To set up something similar I recommend following along this blog as it has pret
       
       <guid>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</guid>
       <description>This file outlines how my computer is set up. With all the tools that I usually use. By documenting this using literate programming am to be explain the use of tools and maintain a consistent development environment across different machines. This only provides a snapshot of my current setup, however the latest version can be found in my github repo.
-Emacs &amp;amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming.</description>
+Setup Emacs &amp;amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming.</description>
     </item>
     
     <item>

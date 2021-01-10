@@ -38,17 +38,12 @@
   </url>
   
   <url>
-    <loc>https://dilzeem.github.io/tags/cat1/</loc>
-    <lastmod>2020-12-30T23:59:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dilzeem.github.io/tags/notebooks/</loc>
-    <lastmod>2020-12-30T23:59:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://dilzeem.github.io/posts/code-1/</loc>
+    <lastmod>2020-12-30T23:59:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dilzeem.github.io/tags/vim/</loc>
     <lastmod>2020-12-30T23:59:00+01:00</lastmod>
   </url>
   
