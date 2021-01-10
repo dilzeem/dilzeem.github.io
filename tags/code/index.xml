@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code on Radiophonic Oddity</title>
+    <link>https://dilzeem.github.io/tags/code/</link>
+    <description>Recent content in code on Radiophonic Oddity</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo, Emacs and Org Mode</title>
+      <link>https://dilzeem.github.io/posts/hugo-blogging/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/hugo-blogging/</guid>
+      <description>This is just outline how I set up this org mode for my blogging. I use Emacs, Org mode and Hugo. Using Org-Mode I find helps in structuring your thoughts and is a powerful tool that has a lot of capabilities.
+To set up something similar I recommend following along this blog as it has pretty good instructions on how to set up this blog. My own setup is essentially similar with small variations.</description>
+    </item>
+    
+    <item>
+      <title>Managing my computer setup</title>
+      <link>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/mannaging-my-computer-setup/</guid>
+      <description>This file outlines how my computer is set up. With all the tools that I usually use. By documenting this using literate programming am to be explain the use of tools and maintain a consistent development environment across different machines. This only provides a snapshot of my current setup, however the latest version can be found in my github repo.
+Setup Emacs &amp;amp; Org-mode Org mode is a tool that enables me to document my configuration files and practice literate programming.</description>
+    </item>
+    
+    <item>
+      <title>Home Assistant</title>
+      <link>https://dilzeem.github.io/posts/home-assitant/</link>
+      <pubDate>Mon, 04 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/home-assitant/</guid>
+      <description>Home Assistant is a solution/software that allows you to automate and coordinate your devices at home. It offers a variety of integrations that one to link different product/services together.
+The main aim of this document is to provide a quick and easy setup on how to get up and running, and a reminder to myself to understand the reasoning about some of the setup choices I made.
+There are 4 main ways to setup home assistant each with their own pros and cons.</description>
+    </item>
+    
+    <item>
+      <title>Spacemacs and Vim</title>
+      <link>https://dilzeem.github.io/posts/code-1/</link>
+      <pubDate>Wed, 30 Dec 2020 23:59:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/code-1/</guid>
+      <description>I first came across Vim while I while I was in my bachelor studying Electrical Engineering. We had to do a few Computer Science classes where we learned how to program. In addition we were all forced to use UNIX, the vi editor, along with subversion. All this stuff was completely new to me. I was meant to be studying electrical engineering, why am I using a terminal, how am I supposed to type my C code and finish the homework assignments, how do I even exit this.</description>
+    </item>
+    
+    <item>
+      <title>I don&#39;t like notebooks</title>
+      <link>https://dilzeem.github.io/posts/i-dont-like-notebooks/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0200</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/i-dont-like-notebooks/</guid>
+      <description>I don&amp;rsquo;t like notebooks. That was the title of the youtube video the algorithims had suggest me to watch. How could one not like using Jupyter Notebooks? This was how I learnt to program in python and how I worked through an online deep learning course (fast.ai). What was even more interesting, was that what sparked the speakers to present the talk was from a twitter fued with the primary teacher of fast.</description>
+    </item>
+    
+  </channel>
+</rss>

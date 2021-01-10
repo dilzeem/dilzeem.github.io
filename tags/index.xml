@@ -8,29 +8,11 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>emacs</title>
-      <link>https://dilzeem.github.io/tags/emacs/</link>
+      <title>code</title>
+      <link>https://dilzeem.github.io/tags/code/</link>
       <pubDate>Sun, 10 Jan 2021 00:00:00 +0100</pubDate>
       
-      <guid>https://dilzeem.github.io/tags/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vim</title>
-      <link>https://dilzeem.github.io/tags/vim/</link>
-      <pubDate>Wed, 30 Dec 2020 23:59:00 +0100</pubDate>
-      
-      <guid>https://dilzeem.github.io/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datascience</title>
-      <link>https://dilzeem.github.io/tags/datascience/</link>
-      <pubDate>Tue, 07 May 2019 00:00:00 +0200</pubDate>
-      
-      <guid>https://dilzeem.github.io/tags/datascience/</guid>
+      <guid>https://dilzeem.github.io/tags/code/</guid>
       <description></description>
     </item>
     
