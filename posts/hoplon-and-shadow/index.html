@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Hoplon &amp; shadow-cljs | Radiophonic Oddity</title>
+  <meta name="description" content="Musings">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Hoplon &amp; shadow-cljs" />
+<meta property="og:description" content="Introduction So I have been meaning to learn about clojurescript for a while now, and have been putting it off. This is my attempt to try and get something going, and understanding how to use clojure/clojurescript
+Why Hoplon? While there are other frameworks out there, I really liked how simple hoplon seemed to be. When looking at the TODO mvc I could grasp it quite easily of what was going on." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dilzeem.github.io/posts/hoplon-and-shadow/" />
+<meta property="article:published_time" content="2021-01-24T00:00:00+01:00" />
+<meta property="article:modified_time" content="2021-01-24T00:00:00+01:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hoplon &amp; shadow-cljs"/>
+<meta name="twitter:description" content="Introduction So I have been meaning to learn about clojurescript for a while now, and have been putting it off. This is my attempt to try and get something going, and understanding how to use clojure/clojurescript
+Why Hoplon? While there are other frameworks out there, I really liked how simple hoplon seemed to be. When looking at the TODO mvc I could grasp it quite easily of what was going on."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://dilzeem.github.io/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://dilzeem.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://dilzeem.github.io/posts/hugo-blogging/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&text=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&is_video=false&description=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hoplon%20%26%20shadow-cljs&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&name=Hoplon%20%26%20shadow-cljs&description=Introduction%20So%20I%20have%20been%20meaning%20to%20learn%20about%20clojurescript%20for%20a%20while%20now%2c%20and%20have%20been%20putting%20it%20off.%20This%20is%20my%20attempt%20to%20try%20and%20get%20something%20going%2c%20and%20understanding%20how%20to%20use%20clojure%2fclojurescript%0aWhy%20Hoplon%3f%20While%20there%20are%20other%20frameworks%20out%20there%2c%20I%20really%20liked%20how%20simple%20hoplon%20seemed%20to%20be.%20When%20looking%20at%20the%20TODO%20mvc%20I%20could%20grasp%20it%20quite%20easily%20of%20what%20was%20going%20on.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&t=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-hoplon">Why Hoplon?</a></li>
+    <li><a href="#shadow-cljs">Shadow cljs</a></li>
+    <li><a href="#install-shadow-cljs">Install shadow-cljs</a>
+      <ul>
+        <li><a href="#zamansky-template">Zamansky template</a></li>
+      </ul>
+    </li>
+    <li><a href="#build-the-site">Build the site</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Hoplon &amp; shadow-cljs
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-01-24 00:00:00 &#43;0100 CET" itemprop="datePublished">2021-01-24</time>
+          
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="introduction">Introduction</h2>
+<p>So I have been meaning to learn about clojurescript for a while now, and have been putting it off.
+This is my attempt to try and get something going, and understanding how to use clojure/clojurescript</p>
+<h2 id="why-hoplon">Why Hoplon?</h2>
+<p>While there are other frameworks out there, I really liked how simple hoplon seemed to be.
+When looking at the <a href="https://github.com/hoplon/demos/tree/master/todoFRP">TODO mvc</a> I could grasp it quite easily of what was going on.
+I don&rsquo;t plan to do anything too complicated, and just wanted something simple to begin with.</p>
+<p>With the react libraries/frameworks (reagent/reframe/rum) I wasn&rsquo;t interested in learning react and understanding how it worked too much.
+But maybe it is something for the future.</p>
+<h2 id="shadow-cljs">Shadow cljs</h2>
+<p>With Hoplon it seems like it was recommended to use <a href="https://github.com/boot-clj/boot">boot</a> as the tool setup a new project, however it seemed like the tool wasn&rsquo;t being developed much anymore.
+I also remember reading somewhere that the tool wasn&rsquo;t being used extensivley within the community.</p>
+<p>I had heard of <a href="https://shadow-cljs.github.io/docs/UsersGuide.html">shadow-cljs</a> and it seemd like a pretty popular tool. So I decided to give it ago.
+There was also an excellent videos [<a href="https://www.youtube.com/watch?v=BZNJi5pP8fU">video 1</a>, <a href="https://www.youtube.com/watch?v=p61lhOvQg2Q&amp;t=195s">video 2</a>] about how to use the tool.</p>
+<h2 id="install-shadow-cljs">Install shadow-cljs</h2>
+<p>To get started with shadow-cljs first you need to make sure that you have Java and NPM installed</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install -g shadow-cljs
+</code></pre></div><h3 id="zamansky-template">Zamansky template</h3>
+<p>To get started I used the <a href="https://github.com/zamansky/shadow-cljs-template">template</a> that Mike Zamansky created and made some changes to it.</p>
+<p>Below is the <code>shadow-cljs.edn</code> which is where you configure how shadow-cljs. It also where you can specify your clojure dependencies.
+A lot of the configuration options are documented in the excellenct <a href="https://shadow-cljs.github.io/docs/UsersGuide.html#%5Fusage">shadow-cljs documentation</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-clojure" data-lang="clojure"><span style="color:#75715e">;; shadow-cljs configuration</span>
+{
+ <span style="color:#75715e">;; where the source files are located</span>
+ <span style="color:#e6db74">:source-paths</span> [<span style="color:#e6db74">&#34;src&#34;</span>]
+
+ <span style="color:#75715e">;; setup the nrepl server to use for development</span>
+ <span style="color:#e6db74">:nrepl</span> {<span style="color:#e6db74">:port</span> <span style="color:#ae81ff">9000</span>}
+
+ <span style="color:#75715e">;; clojure dependencies. npm dependencies can be manage via package.json</span>
+ <span style="color:#e6db74">:dependencies</span> [[nrepl <span style="color:#e6db74">&#34;0.8.3&#34;</span>]
+                [binaryage/devtools <span style="color:#e6db74">&#34;1.0.2&#34;</span>]
+                [cider/piggieback <span style="color:#e6db74">&#34;0.4.0&#34;</span>]
+                [cider/cider-nrepl <span style="color:#e6db74">&#34;0.25.5&#34;</span>]
+                [org.clojure/clojure <span style="color:#e6db74">&#34;1.10.0&#34;</span>]
+                [org.clojure/clojurescript <span style="color:#e6db74">&#34;1.10.339&#34;</span>]
+                [hoplon/hoplon             <span style="color:#e6db74">&#34;7.2.0&#34;</span>]]
+
+ <span style="color:#e6db74">:dev-http</span> {<span style="color:#ae81ff">9090</span> <span style="color:#e6db74">&#34;target/&#34;</span>}
+
+ <span style="color:#75715e">;; can have multiple builds here</span>
+ <span style="color:#e6db74">:builds</span> {<span style="color:#e6db74">:app</span> {<span style="color:#e6db74">:output-dir</span> <span style="color:#e6db74">&#34;target/&#34;</span>
+                <span style="color:#e6db74">:asset-path</span> <span style="color:#e6db74">&#34;.&#34;</span>
+                <span style="color:#e6db74">:target</span>     <span style="color:#e6db74">:browser</span>
+                <span style="color:#75715e">;; hoplon here is what the file name will be</span>
+                <span style="color:#75715e">;; main.page.index/main relates to your src folder structure</span>
+                <span style="color:#e6db74">:modules</span>    {<span style="color:#e6db74">:hoplon</span> {<span style="color:#e6db74">:init-fn</span> main.pages.index/main}}
+                <span style="color:#75715e">;; allows us to use the binaryage/devtools package to have better console message in chrome dev-tools</span>
+                <span style="color:#e6db74">:devtools</span>   {<span style="color:#e6db74">:after-load</span> main.pages.index/init!
+                             <span style="color:#e6db74">:http-root</span>  <span style="color:#e6db74">&#34;target&#34;</span>
+                             <span style="color:#e6db74">:http-port</span>  <span style="color:#ae81ff">9090</span>}}}
+ }
+</code></pre></div><p>The <code>package.json</code> file is where we can configure how npm works and also the place where you can install your javascript dependencies.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+   <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;trantor&#34;</span>,
+   <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;0.0.1&#34;</span>,
+   <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;A simple template for my shadow-cljs using hoplon webframework&#34;</span>,
+   <span style="color:#f92672">&#34;main&#34;</span>: <span style="color:#e6db74">&#34;index.js&#34;</span>,
+   <span style="color:#f92672">&#34;scripts&#34;</span>: {
+      <span style="color:#f92672">&#34;test&#34;</span>: <span style="color:#e6db74">&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>,
+      <span style="color:#f92672">&#34;tw&#34;</span>: <span style="color:#e6db74">&#34;tailwind build tw/style.css -- -o target/css/main.css&#34;</span>,
+      <span style="color:#f92672">&#34;watch&#34;</span>: <span style="color:#e6db74">&#34;shadow-cljs watch app&#34;</span>,
+      <span style="color:#f92672">&#34;watch:css&#34;</span>: <span style="color:#e6db74">&#34;onchange &#39;tw/*css&#39; -- npm run tw&#34;</span>
+   },
+   <span style="color:#f92672">&#34;repository&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;git&#34;</span>,
+      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;git+https://github.com/dilzeem/trantor.git&#34;</span>
+   },
+   <span style="color:#f92672">&#34;keywords&#34;</span>: [],
+   <span style="color:#f92672">&#34;author&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+   <span style="color:#f92672">&#34;license&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+   <span style="color:#f92672">&#34;bugs&#34;</span>: {
+      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>
+   },
+   <span style="color:#f92672">&#34;devDependencies&#34;</span>: {
+      <span style="color:#f92672">&#34;onchange&#34;</span>: <span style="color:#e6db74">&#34;^6.1.0&#34;</span>,
+      <span style="color:#f92672">&#34;tailwindcss&#34;</span>: <span style="color:#e6db74">&#34;^1.1.4&#34;</span>,
+      <span style="color:#f92672">&#34;shadow-cljs&#34;</span>: <span style="color:#e6db74">&#34;2.11.4&#34;</span>
+   },
+   <span style="color:#f92672">&#34;dependencies&#34;</span>: {
+      <span style="color:#f92672">&#34;jquery&#34;</span>: <span style="color:#e6db74">&#34;^3.3.1&#34;</span>
+   }
+}
+</code></pre></div><p>There in an <a href="https://www.youtube.com/watch?v=CWjUccpFvrg">excellent video</a> explaining edn and how to use configure it for your clojure project.
+It seems like this is the preferred tool to use to manage clojure projects.</p>
+<h2 id="build-the-site">Build the site</h2>
+<p>Install dependencies:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install
+</code></pre></div><p>Run Shadow CLJS dev server (and REPL):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm run watch
+</code></pre></div><p>You don&rsquo;t have to do the above because, it will automatcailly created when jacking in into the REPL.</p>
+<p>In another terminal, recompile Tailwind CSS if it changes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm run watch:css
+</code></pre></div><p>A template for this project is here:</p>
+<p><a href="https://github.com/dilzeem/hoplon-shadow-cljs">https://github.com/dilzeem/hoplon-shadow-cljs</a></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#why-hoplon">Why Hoplon?</a></li>
+    <li><a href="#shadow-cljs">Shadow cljs</a></li>
+    <li><a href="#install-shadow-cljs">Install shadow-cljs</a>
+      <ul>
+        <li><a href="#zamansky-template">Zamansky template</a></li>
+      </ul>
+    </li>
+    <li><a href="#build-the-site">Build the site</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&text=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&is_video=false&description=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Hoplon%20%26%20shadow-cljs&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&title=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&name=Hoplon%20%26%20shadow-cljs&description=Introduction%20So%20I%20have%20been%20meaning%20to%20learn%20about%20clojurescript%20for%20a%20while%20now%2c%20and%20have%20been%20putting%20it%20off.%20This%20is%20my%20attempt%20to%20try%20and%20get%20something%20going%2c%20and%20understanding%20how%20to%20use%20clojure%2fclojurescript%0aWhy%20Hoplon%3f%20While%20there%20are%20other%20frameworks%20out%20there%2c%20I%20really%20liked%20how%20simple%20hoplon%20seemed%20to%20be.%20When%20looking%20at%20the%20TODO%20mvc%20I%20could%20grasp%20it%20quite%20easily%20of%20what%20was%20going%20on.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fhoplon-and-shadow%2f&t=Hoplon%20%26%20shadow-cljs">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Radiophonic Oddity 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

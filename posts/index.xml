@@ -6,7 +6,17 @@
     <description>Recent content in Posts on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hoplon &amp; shadow-cljs</title>
+      <link>https://dilzeem.github.io/posts/hoplon-and-shadow/</link>
+      <pubDate>Sun, 24 Jan 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/hoplon-and-shadow/</guid>
+      <description>Introduction So I have been meaning to learn about clojurescript for a while now, and have been putting it off. This is my attempt to try and get something going, and understanding how to use clojure/clojurescript
+Why Hoplon? While there are other frameworks out there, I really liked how simple hoplon seemed to be. When looking at the TODO mvc I could grasp it quite easily of what was going on.</description>
+    </item>
+    
     <item>
       <title>Hugo, Emacs and Org Mode</title>
       <link>https://dilzeem.github.io/posts/hugo-blogging/</link>
