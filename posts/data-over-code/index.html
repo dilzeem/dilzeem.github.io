@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Data over Code | Radiophonic Oddity</title>
+  <meta name="description" content="Musings">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Data over Code" />
+<meta property="og:description" content="An interesting video that made think about how I approach problems. This was an interesting perspective and an excellent communicated talk.
+The key takeaway is recognize that this approach we are looking to identify and label side effects. We identify which are the side effects.
+Need to identify the parts of your code:
+ Data required for your program/system Computations over the data Actions are the side effects  When you compose the componenets you &ldquo;pollute&rdquo; your system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dilzeem.github.io/posts/data-over-code/" />
+<meta property="article:published_time" content="2021-02-07T00:00:00+01:00" />
+<meta property="article:modified_time" content="2021-02-07T00:00:00+01:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data over Code"/>
+<meta name="twitter:description" content="An interesting video that made think about how I approach problems. This was an interesting perspective and an excellent communicated talk.
+The key takeaway is recognize that this approach we are looking to identify and label side effects. We identify which are the side effects.
+Need to identify the parts of your code:
+ Data required for your program/system Computations over the data Actions are the side effects  When you compose the componenets you &ldquo;pollute&rdquo; your system."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://dilzeem.github.io/css/style-dark.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://dilzeem.github.io/images/favicon.ico" />
+
+  
+  
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://dilzeem.github.io/posts/hoplon-and-shadow/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&text=Data%20over%20Code">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&is_video=false&description=Data%20over%20Code">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Data%20over%20Code&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-stumbleupon " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-digg " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&name=Data%20over%20Code&description=An%20interesting%20video%20that%20made%20think%20about%20how%20I%20approach%20problems.%20This%20was%20an%20interesting%20perspective%20and%20an%20excellent%20communicated%20talk.%0aThe%20key%20takeaway%20is%20recognize%20that%20this%20approach%20we%20are%20looking%20to%20identify%20and%20label%20side%20effects.%20We%20identify%20which%20are%20the%20side%20effects.%0aNeed%20to%20identify%20the%20parts%20of%20your%20code%3a%0a%20Data%20required%20for%20your%20program%2fsystem%20Computations%20over%20the%20data%20Actions%20are%20the%20side%20effects%20%20When%20you%20compose%20the%20componenets%20you%20%26ldquo%3bpollute%26rdquo%3b%20your%20system.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&t=Data%20over%20Code">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Data over Code
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2021-02-07 00:00:00 &#43;0100 CET" itemprop="datePublished">2021-02-07</time>
+          
+        </div>
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <p>An interesting <a href="https://www.youtube.com/watch?v=ZnhHTnguLMs">video</a> that made think about how I approach problems.
+This was an interesting perspective and an excellent communicated talk.</p>
+<p>The key takeaway is recognize that this approach we are looking to identify and label side effects.
+We identify which are the side effects.</p>
+<p>Need to identify the parts of your code:</p>
+<ul>
+<li>Data required for your program/system</li>
+<li>Computations over the data</li>
+<li>Actions are the side effects</li>
+</ul>
+<p>When you compose the componenets you &ldquo;pollute&rdquo; your system.</p>
+<p>Steps in workflow are:</p>
+<ol>
+<li>Get it to work</li>
+<li>Identify the side effects, and push it to the edge of the system</li>
+<li>Reify your system. Convert your function into a data structure.</li>
+</ol>
+<p>Take code, make it into data. Make functions to manipulate such data strcutures.</p>
+<p>In this <a href="https://www.youtube.com/watch?v=DJtef410XaM&amp;t=1s">python video</a> this princple is done and exactly what should be done for projects.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">All posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&text=Data%20over%20Code">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&is_video=false&description=Data%20over%20Code">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Data%20over%20Code&body=Check out this article: https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.stumbleupon.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://digg.com/submit?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&title=Data%20over%20Code">
+      <i class="fab fa-digg fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&name=Data%20over%20Code&description=An%20interesting%20video%20that%20made%20think%20about%20how%20I%20approach%20problems.%20This%20was%20an%20interesting%20perspective%20and%20an%20excellent%20communicated%20talk.%0aThe%20key%20takeaway%20is%20recognize%20that%20this%20approach%20we%20are%20looking%20to%20identify%20and%20label%20side%20effects.%20We%20identify%20which%20are%20the%20side%20effects.%0aNeed%20to%20identify%20the%20parts%20of%20your%20code%3a%0a%20Data%20required%20for%20your%20program%2fsystem%20Computations%20over%20the%20data%20Actions%20are%20the%20side%20effects%20%20When%20you%20compose%20the%20componenets%20you%20%26ldquo%3bpollute%26rdquo%3b%20your%20system.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fdilzeem.github.io%2fposts%2fdata-over-code%2f&t=Data%20over%20Code">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2021  Radiophonic Oddity 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">All posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+  
+
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+</html>

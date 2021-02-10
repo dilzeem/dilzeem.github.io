@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Jan 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data over Code</title>
+      <link>https://dilzeem.github.io/posts/data-over-code/</link>
+      <pubDate>Sun, 07 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/data-over-code/</guid>
+      <description>An interesting video that made think about how I approach problems. This was an interesting perspective and an excellent communicated talk.
+The key takeaway is recognize that this approach we are looking to identify and label side effects. We identify which are the side effects.
+Need to identify the parts of your code:
+ Data required for your program/system Computations over the data Actions are the side effects  When you compose the componenets you &amp;ldquo;pollute&amp;rdquo; your system.</description>
+    </item>
+    
     <item>
       <title>Hoplon &amp; shadow-cljs</title>
       <link>https://dilzeem.github.io/posts/hoplon-and-shadow/</link>
