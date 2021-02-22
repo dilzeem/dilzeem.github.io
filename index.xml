@@ -6,7 +6,17 @@
     <description>Recent content on Radiophonic Oddity</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 07 Feb 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Feb 2021 00:00:00 +0100</lastBuildDate><atom:link href="https://dilzeem.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blogging with just Org Mode</title>
+      <link>https://dilzeem.github.io/posts/blogging-with-org/</link>
+      <pubDate>Mon, 22 Feb 2021 00:00:00 +0100</pubDate>
+      
+      <guid>https://dilzeem.github.io/posts/blogging-with-org/</guid>
+      <description>Why I wanted to learn more about some of the powerful features of Org Mode that I wasn&amp;rsquo;t using or even aware of. It also a good opporunity to learn about and practice my Elisp. I also wanted a setup where I understood more what was going, and have the ability to control and tweak it to suit my needs.
+My current blogging setup involved Hugo and Org Mode by using hugo and the excellent packaged ox-hugo that converts my org files to hugo compatible markdown.</description>
+    </item>
+    
     <item>
       <title>Data over Code</title>
       <link>https://dilzeem.github.io/posts/data-over-code/</link>
